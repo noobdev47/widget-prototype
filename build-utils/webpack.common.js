@@ -32,18 +32,24 @@ const config = {
 		moduleIds: 'deterministic',
 		// runtimeChunks: 'single',
 		splitChunks: {
+			// maxSize: 1,
 			cacheGroups: {
-				styles: {
-					name: 'styles',
-					test: /\.css$/,
-					chunks: 'all',
-					enforce: true,
+				commons: {
+					name: 'commons',
+					chunks: 'initial',
+					minChunks: 1,
 				},
-				vendor: {
-					chunks: 'all',
-					test: /[\\/]node_modules[\\/]/,
-					name: 'vendors',
-				},
+				// styles: {
+				// 	name: 'styles',
+				// 	test: /\.css$/,
+				// 	chunks: 'all',
+				// 	enforce: true,
+				// },
+				// vendor: {
+				// 	chunks: 'all',
+				// 	test: /[\\/]node_modules[\\/]/,
+				// 	name: 'vendors',
+				// },
 			},
 		},
 	},

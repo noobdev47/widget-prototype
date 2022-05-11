@@ -28,6 +28,9 @@ const config = {
 		new PurgecssPlugin({
 			paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
 		}),
+		new webpack.optimize.LimitChunkCountPlugin({
+			maxChunks: 1,
+		}),
 		new BundleAnalyzerPlugin(),
 	],
 }
