@@ -14,10 +14,10 @@ const PATHS = {
 const config = {
 	mode: 'production',
 	entry: {
-		app: [`${commonPaths.appEntry}/index.js`],
+		app: `${commonPaths.appEntry}/index.js`,
 	},
 	output: {
-		filename: 'static/[name].[contenthash].js',
+		filename: 'static/bundle.js',
 		clean: true,
 	},
 	// devtool: 'source-map',
