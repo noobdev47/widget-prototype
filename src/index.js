@@ -1,18 +1,16 @@
 import App from './App'
-import ReactDOM from 'react-dom'
-import React, { lazy, Suspense } from 'react'
-import regeneratorRuntime from 'regenerator-runtime'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { Provider } from 'react-redux'
+import store from './store'
 
-// const App = lazy(() => import('./App'))
+const rootElement = document.getElementById('pkteam-test-widget')
+const root = createRoot(rootElement)
 
-ReactDOM.render(
-	<React.StrictMode>
-		{/* <BrowserRouter> */}
-		{/* <Suspense fallback={<div>Loading...</div>}> */}
-		<App />
-		{/* </Suspense> */}
-		{/* </BrowserRouter> */}
-	</React.StrictMode>,
-	document.getElementById('root')
+root.render(
+  <StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </StrictMode>,
 )
