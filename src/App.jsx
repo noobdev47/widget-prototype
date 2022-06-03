@@ -1,7 +1,13 @@
+import './App.css'
 import React from 'react'
+import MainContainer from './components/mainconatiner/MainContainer'
 
 const App = () => {
-	return <div>I'm being served remotely.</div>
+	return (
+		<>
+			<MainContainer />
+		</>
+	)
 }
 
 export default App
