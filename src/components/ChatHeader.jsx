@@ -5,7 +5,6 @@ import { GoScreenFull } from 'react-icons/go'
 import { GoScreenNormal } from 'react-icons/go'
 
 const ChatHeader = ({ Auth, toggle, setToggle, fullscreen, setFullscreen }) => {
-  
 	function toggleFullScreen() {
 		setFullscreen(!fullscreen)
 	}

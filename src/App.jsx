@@ -1,6 +1,6 @@
 import './App.css'
 import React from 'react'
-import MainContainer from './components/mainconatiner/MainContainer'
+import MainContainer from './components/main_container/MainContainer'
 
 const App = () => {
 	return (

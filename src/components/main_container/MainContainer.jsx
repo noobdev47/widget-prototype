@@ -1,3 +1,4 @@
+import Filter from '../filter/Filter'
 import { connect } from 'react-redux'
 import ChatHeader from '../ChatHeader'
 import ChatToggler from '../ChatToggler'
@@ -9,6 +10,7 @@ const MainContainer = ({ Auth }) => {
 	const [Toggle, setToggle] = useState(false)
 	const [loading, setLoading] = useState(false)
 	const [Fullscreen, setFullscreen] = useState(false)
+
 	return (
 		<>
 			<link rel='stylesheet' href='/assets/css/style.css' />
@@ -28,8 +30,8 @@ const MainContainer = ({ Auth }) => {
 						fullscreen={Fullscreen}
 						setFullscreen={setFullscreen}
 					/>
-					<div>
-						<p>Main Body</p>
+					<div className='akits-pkteam-subcontainer'>
+						<Filter />
 					</div>
 				</div>
 

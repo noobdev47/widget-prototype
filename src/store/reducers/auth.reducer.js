@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT, REGISTER } from "../actionTypes/index"
+import { LOGIN, LOGOUT, REGISTER } from "../action_types/index"
 
 const initialState = {
   token: JSON.parse(localStorage.getItem('akits-pkteam-storage')) !== null ? JSON.parse(localStorage.getItem('akits-pkteam-storage')).token || '' : '',
