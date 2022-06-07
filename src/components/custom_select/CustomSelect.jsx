@@ -4,16 +4,17 @@ import makeAnimated from 'react-select/animated'
 
 const animatedComponents = makeAnimated()
 
-const CustomSelect = ({ options, label }) => {
+const CustomSelect = ({ options, label, name }) => {
 	return (
-		<div className='akits-pkteam-custom-select'>
-			<h3 className='akits-pkteam-filter-div-header-text'>{label}</h3>
+		<div className='flex basis-2/4 p-2 items-stretch flex-col'>
+			<p className='m-0 font-sans text-base'>{label}</p>
 			<Select
 				isMulti
+				name={name}
 				isSearchable
 				options={options}
 				closeMenuOnSelect={false}
-				className='akits-pkteam-select'
+				className='mt-2 font-sans text-sm'
 				components={animatedComponents}
 			/>
 		</div>

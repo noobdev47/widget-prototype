@@ -13,7 +13,7 @@ const MainContainer = ({ Auth }) => {
 
 	return (
 		<>
-			<link rel='stylesheet' href='/assets/css/style.css' />
+			{/* <link rel='stylesheet' href='/assets/css/style.css' /> */}
 
 			{/* <!-- Main Wrapper --> */}
 			<div className='akits-pkteam-fabs'>
@@ -30,7 +30,7 @@ const MainContainer = ({ Auth }) => {
 						fullscreen={Fullscreen}
 						setFullscreen={setFullscreen}
 					/>
-					<div className='akits-pkteam-subcontainer'>
+					<div className='flex flex-col h-4/5 overflow-y-scroll items-stretch m-2 p-2'>
 						<Filter />
 					</div>
 				</div>
