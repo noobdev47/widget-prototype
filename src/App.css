@@ -1,6 +1,10 @@
 /* @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,cyrillic); */
 /* @import url(https://zavoloklom.github.io/material-design-iconic-font/css/docs.md-iconic-font.min.css); */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
 	/* --url: url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,cyrillic); */
 	--main-white-color: #fff;
@@ -11,9 +15,9 @@
 	--primary-placeholder-color: #1c3144;
 }
 
-#akits-pkteam-widget-root {
+/* #akits-pkteam-widget-root {
 	font-family: 'Roboto';
-}
+} */
 
 #akits-pkteam-widget-root > ul li {
 	list-style: none;
@@ -36,7 +40,7 @@
 	border-radius: 50%;
 	text-align: center;
 	position: relative;
-	margin: 25px auto 0;
+	margin: 15px auto 0;
 	z-index: 9999999999;
 	transition: all 0.1s ease-out;
 	color: var(--primary-icon-color);
@@ -120,7 +124,7 @@
 	font-weight: 500;
 	line-height: 22px;
 	border-radius: 20px;
-	font-family: var(--url);
+	/* font-family: var(--url); */
 	font-smooth: antialiased;
 	transition: all 0.2s ease-in-out;
 	-webkit-font-smooth: antialiased;
@@ -682,10 +686,32 @@ strong.akits-pkteam-chat_time {
 	margin-top: 5px;
 }
 
+.akits-pkteam-custom-input {
+	flex: 40%;
+	padding: 10px;
+	display: flex;
+	align-items: stretch;
+	flex-direction: column;
+}
+
 .akits-pkteam-filter-dimensions-container {
 	padding: 5px;
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
+}
+
+.akits-pkteam-filter-carat-container {
+	padding: 5px;
+	display: flex;
+	flex-direction: row;
+}
+
+.akits-pkteam-filter-price-container {
+	padding: 5px;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
 	justify-content: space-between;
 }
 
@@ -702,6 +728,14 @@ strong.akits-pkteam-chat_time {
 	margin-top: 5px;
 	flex-direction: row;
 	justify-content: space-between;
+}
+
+.akits-pkteam-filter-range-subgroup {
+	height: 35px;
+	display: flex;
+	margin-top: 5px;
+	flex-direction: row;
+	/* justify-content: space-between; */
 }
 
 /*Chatbox scrollbar*/
