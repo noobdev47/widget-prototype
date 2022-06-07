@@ -641,16 +641,6 @@ strong.akits-pkteam-chat_time {
 	padding: 0 1px 1px 0;
 }
 
-.akits-pkteam-subcontainer {
-	height: 88%;
-	display: flex;
-	margin: 0.5rem;
-	padding: 0.5rem;
-	overflow-y: scroll;
-	align-items: stretch;
-	flex-direction: column;
-}
-
 .akits-pkteam-filter-div {
 	/* height: 50%; */
 	padding: 1rem;
@@ -661,11 +651,6 @@ strong.akits-pkteam-chat_time {
 	background-color: #f8f9fa;
 }
 
-.akits-pkteam-filter-div-header-text {
-	margin: 0;
-	font-family: 'Roboto';
-}
-
 .akits-pkteam-filter-div-content {
 	display: flex;
 	flex-wrap: wrap;
@@ -674,68 +659,11 @@ strong.akits-pkteam-chat_time {
 	justify-content: space-between;
 }
 
-.akits-pkteam-custom-select {
-	flex: 40%;
-	padding: 10px;
-	display: flex;
-	align-items: stretch;
-	flex-direction: column;
-}
-
-.akits-pkteam-select {
-	margin-top: 5px;
-}
-
-.akits-pkteam-custom-input {
-	flex: 40%;
-	padding: 10px;
-	display: flex;
-	align-items: stretch;
-	flex-direction: column;
-}
-
 .akits-pkteam-filter-dimensions-container {
 	padding: 5px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-}
-
-.akits-pkteam-filter-carat-container {
-	padding: 5px;
-	display: flex;
-	flex-direction: row;
-}
-
-.akits-pkteam-filter-price-container {
-	padding: 5px;
-	display: flex;
-	flex-direction: row;
-	align-items: stretch;
-	justify-content: space-between;
-}
-
-.akits-pkteam-filter-input {
-	display: flex;
-	padding: 5px;
-	align-items: stretch;
-	flex-direction: column;
-}
-
-.akits-pkteam-filter-input-subgroup {
-	height: 35px;
-	display: flex;
-	margin-top: 5px;
-	flex-direction: row;
-	justify-content: space-between;
-}
-
-.akits-pkteam-filter-range-subgroup {
-	height: 35px;
-	display: flex;
-	margin-top: 5px;
-	flex-direction: row;
-	/* justify-content: space-between; */
 }
 
 /*Chatbox scrollbar*/
