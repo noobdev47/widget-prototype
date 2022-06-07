@@ -152,9 +152,7 @@ const Filter = () => {
 							/>
 						</div>
 					</div>
-					{/* </div>
 
-				  <div className='akits-pkteam-filter-price-container'> */}
 					<div className='flex p-1 items-stretch flex-col'>
 						<h3 className='m-0 font-sans text-base'>Price:</h3>
 						<div className='flex mt-1 flex-row'>
