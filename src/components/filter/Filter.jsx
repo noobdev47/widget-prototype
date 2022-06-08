@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import CustomSelect from '../custom_select/CustomSelect'
+import CaretUpIcon from '../assets/icons/caret-up-icon.svg'
+import CaretDownIcon from '../assets/icons/caret-down-icon.svg'
 
-const Filter = () => {
+const Filter = ({ hideFilter, setHideFilter }) => {
 	const [filter, setFilter] = useState({
 		shapes: [],
 		colors: [],
@@ -29,8 +31,25 @@ const Filter = () => {
 
 	return (
 		<div className='p-2 border-2 rounded-md border-solid border-slate-200	bg-slate-50'>
-			<p className='font-sans text-3xl'>Search by Filter:</p>
-			<div className='flex flex-row justify-between flex-wrap mt-4'>
+			<div className='flex flex-row justify-between mb-2'>
+				<p className='font-sans text-3xl'>Search by Filter:</p>
+				<div
+					className={`transition duration-500 ease-in-out transform ${
+						hideFilter ? 'rotate-180' : 'rotate-0'
+					}`}
+				>
+					<img
+						src={CaretUpIcon}
+						onClick={() => setHideFilter(!hideFilter)}
+						className='h-9 w-9 cursor-pointer animate-bounce'
+					/>
+				</div>
+			</div>
+			<div
+				className={`${
+					hideFilter ? 'hidden' : 'flex'
+				} flex-col md:flex-row sm:flex-col lg:flex-row justify-between flex-wrap transition duration-500 ease-in-out transform`}
+			>
 				<CustomSelect
 					label={'Type'}
 					name={'stone_types'}
@@ -126,55 +145,14 @@ const Filter = () => {
 				</div>
 
 				<div className='p-1 flex flex-row items-stretch'>
-					<div className='flex p-1 items-stretch flex-col'>
+					<div className='flex p-1 items-stretch flex-col w-100'>
 						<h3 className='m-0 font-sans text-base'>Carats:</h3>
-						<div className='flex mt-1 flex-row'>
-							<input
-								min='0.05'
-								type='range'
-								name='weight_from'
-								max={filter.weight_to}
-								onChange={handleOnChange}
-								value={filter.weight_from}
-								style={{
-									width: '50%',
-									marginRight: '5px',
-								}}
-							/>
-							<input
-								max='150'
-								type='range'
-								name='weight_to'
-								min={filter.weight_from}
-								value={filter.weight_to}
-								onChange={handleOnChange}
-								style={{ marginRight: '5px', width: '50%' }}
-							/>
-						</div>
+						<div className='flex mt-1 flex-row'></div>
 					</div>
 
-					<div className='flex p-1 items-stretch flex-col'>
+					<div className='flex p-1 items-stretch flex-col w-100'>
 						<h3 className='m-0 font-sans text-base'>Price:</h3>
-						<div className='flex mt-1 flex-row'>
-							<input
-								min='300'
-								type='range'
-								name='price_from'
-								max={filter.price_to}
-								onChange={handleOnChange}
-								value={filter.price_from}
-								style={{ marginRight: '5px' }}
-							/>
-							<input
-								type='range'
-								max='1000000'
-								name='price_to'
-								min={filter.price_from}
-								value={filter.price_to}
-								onChange={handleOnChange}
-								style={{ marginRight: '5px' }}
-							/>
-						</div>
+						<div className='flex mt-1 flex-row'></div>
 					</div>
 				</div>
 
