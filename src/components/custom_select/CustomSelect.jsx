@@ -14,7 +14,7 @@ const CustomSelect = ({ options, label, name }) => {
 				isSearchable
 				options={options}
 				closeMenuOnSelect={false}
-				className='mt-2 font-sans text-sm'
+				className='mt-2 font-sans text-base'
 				components={animatedComponents}
 			/>
 		</div>
