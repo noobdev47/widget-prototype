@@ -3,7 +3,7 @@ import GemIcon from './assets/icons/gem-icon.svg'
 import CloseIcon from './assets/icons/close-icon.svg'
 
 const ChatToggler = ({ toggle, setToggle, fullscreen }) => {
-	function toggleFab() {
+	const toggleFab = () => {
 		setToggle(!toggle)
 	}
 
@@ -16,15 +16,7 @@ const ChatToggler = ({ toggle, setToggle, fullscreen }) => {
 					toggle ? ' akits-pkteam-is-visible is-float' : ''
 				} ${fullscreen ? ' akits-pkteam-is-hide' : ''}`}
 			>
-				{toggle ? (
-					<div style={{ marginTop: '15px' }}>
-						<img src={CloseIcon} />
-					</div>
-				) : (
-					<div style={{ marginTop: '13px' }}>
-						<img src={GemIcon} />
-					</div>
-				)}
+				<img src={toggle ? CloseIcon : GemIcon} />
 			</a>
 		</>
 	)
