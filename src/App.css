@@ -39,6 +39,9 @@
 	overflow: hidden;
 	border-radius: 50%;
 	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	position: relative;
 	margin: 15px auto 0;
 	z-index: 9999999999;
