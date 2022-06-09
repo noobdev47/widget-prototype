@@ -3,7 +3,10 @@ import React from 'react'
 const ListItem = ({ data }) => {
 	return (
 		<div className='p-2 m-2 flex flex-col basis-2/3 sm:basis-5/12 md:basis-5/12 lg:basis-5/12  border border-slate-300 rounded'>
-			<img src={data.image} className='border-b' />
+			<img
+				src={data.image}
+				className='border-b transition ease-in-out duration-300 hover:scale-105'
+			/>
 			<p className='m-0 font-sans text-center text-xl my-2 text-slate-400'>
 				SKU-{data.sku}
 			</p>
