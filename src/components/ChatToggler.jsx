@@ -8,17 +8,18 @@ const ChatToggler = ({ toggle, setToggle, fullscreen }) => {
 	}
 
 	return (
-		<>
-			<a
-				onClick={toggleFab}
-				id='akits-pkteam-prime'
-				className={`akits-pkteam-fab ${
-					toggle ? ' akits-pkteam-is-visible is-float' : ''
-				} ${fullscreen ? ' akits-pkteam-is-hide' : ''}`}
-			>
-				<img src={toggle ? CloseIcon : GemIcon} />
-			</a>
-		</>
+		<a
+			onClick={toggleFab}
+			id='akits-pkteam-prime'
+			className={`akits-pkteam-fab shadow-lg hover:shadow-lg hover:shadow-sky-600/50 ${
+				toggle ? ' akits-pkteam-is-visible is-float' : ''
+			} ${fullscreen ? ' akits-pkteam-is-hide' : ''}`}
+		>
+			<img
+				className={`${toggle ? '' : ''}`}
+				src={toggle ? CloseIcon : GemIcon}
+			/>
+		</a>
 	)
 }
 
