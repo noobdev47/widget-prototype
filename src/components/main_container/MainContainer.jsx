@@ -134,7 +134,7 @@ const MainContainer = ({ Auth }) => {
 							</div>
 							<div className='inline-flex m-2 mt-2 p-2 flex-wrap content-center items-center justify-center'>
 								{data.map((singleInstance, i) => (
-									<ListItem data={singleInstance} />
+									<ListItem key={i} data={singleInstance} />
 								))}
 							</div>
 						</div>
