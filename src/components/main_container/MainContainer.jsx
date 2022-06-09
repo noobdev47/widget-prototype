@@ -3,92 +3,121 @@ import Filter from '../filter/Filter'
 import { connect } from 'react-redux'
 import ChatHeader from '../ChatHeader'
 import ChatToggler from '../ChatToggler'
-import React, { useRef, useState } from 'react'
+import ScrollToTop from '../ScrollToTop'
 import ListItem from '../list_item/ListItem'
+import React, { useEffect, useRef, useState } from 'react'
 
 const MainContainer = ({ Auth }) => {
-	const [Toggle, setToggle] = useState(false)
+	const [toggle, setToggle] = useState(false)
 	const [loading, setLoading] = useState(false)
 	const [Fullscreen, setFullscreen] = useState(false)
 	const [hideFilter, setHideFilter] = useState(false)
-
+	const [scrolledToTop, setScrolledToTop] = useState(false)
 	const [data, setData] = useState([
 		{
-			type: 'Zircon',
 			shape: 'Oval',
+			type: 'Zircon',
+			clarity: 'VI1',
+			price: '$425.7',
 			carat: '4.90 ct',
+			origin: 'Unknown',
 			sku: '1234-1234512',
 			intensity: 'Medium Intensity',
-			clarity: 'VI1',
-			origin: 'Unknown',
 			image:
 				'https://d124iipltzue9v.cloudfront.net/uploads/310/148454/lab/stone-images/45b1cd38e74b0de32f261fc9a04c23b4.jpeg',
 		},
 		{
-			type: 'Zircon',
 			shape: 'Oval',
+			type: 'Zircon',
+			clarity: 'VI1',
+			price: '$425.7',
 			carat: '4.90 ct',
+			origin: 'Unknown',
 			sku: '1234-1234512',
 			intensity: 'Medium Intensity',
-			clarity: 'VI1',
-			origin: 'Unknown',
 			image:
 				'https://d124iipltzue9v.cloudfront.net/uploads/310/148454/lab/stone-images/45b1cd38e74b0de32f261fc9a04c23b4.jpeg',
 		},
 		{
-			type: 'Zircon',
 			shape: 'Oval',
+			type: 'Zircon',
+			clarity: 'VI1',
+			price: '$425.7',
 			carat: '4.90 ct',
+			origin: 'Unknown',
 			sku: '1234-1234512',
 			intensity: 'Medium Intensity',
-			clarity: 'VI1',
-			origin: 'Unknown',
 			image:
 				'https://d124iipltzue9v.cloudfront.net/uploads/310/148454/lab/stone-images/45b1cd38e74b0de32f261fc9a04c23b4.jpeg',
 		},
 		{
-			type: 'Zircon',
 			shape: 'Oval',
+			clarity: 'VI1',
+			type: 'Zircon',
+			price: '$425.7',
 			carat: '4.90 ct',
+			origin: 'Unknown',
 			sku: '1234-1234512',
 			intensity: 'Medium Intensity',
-			clarity: 'VI1',
-			origin: 'Unknown',
 			image:
 				'https://d124iipltzue9v.cloudfront.net/uploads/310/148454/lab/stone-images/45b1cd38e74b0de32f261fc9a04c23b4.jpeg',
 		},
 		{
-			type: 'Zircon',
 			shape: 'Oval',
+			type: 'Zircon',
+			clarity: 'VI1',
+			price: '$425.7',
 			carat: '4.90 ct',
+			origin: 'Unknown',
 			sku: '1234-1234512',
 			intensity: 'Medium Intensity',
-			clarity: 'VI1',
-			origin: 'Unknown',
 			image:
 				'https://d124iipltzue9v.cloudfront.net/uploads/310/148454/lab/stone-images/45b1cd38e74b0de32f261fc9a04c23b4.jpeg',
 		},
 	])
+	let scrollBody = ''
+
+	const scrollToTop = () => {
+		let scrollBody = document.querySelector('#scroll-body')
+
+		scrollBody.scrollTop = 0
+		setScrolledToTop(true)
+	}
+
+	useEffect(() => {
+		scrollBody = document.querySelector('#scroll-body')
+	}, [])
+
+	useEffect(() => {
+		if (scrollBody !== '')
+			scrollBody.addEventListener('scroll', event => {
+				if (scrollBody.scrollTop <= 100) setScrolledToTop(false)
+				else setScrolledToTop(true)
+			})
+	}, [scrollBody])
 
 	return (
 		<>
 			<div className='akits-pkteam-fabs'>
 				<div
 					className={`akits-pkteam-chat ${
-						Toggle ? 'akits-pkteam-is-visible' : ''
+						toggle ? 'akits-pkteam-is-visible' : ''
 					} ${Fullscreen ? 'akits-pkteam-chat_fullscreen' : ''}`}
 				>
 					<ChatHeader
-						toggle={Toggle}
+						toggle={toggle}
 						setToggle={setToggle}
 						fullscreen={Fullscreen}
 						setFullscreen={setFullscreen}
 					/>
 					<div style={{ height: '95%' }}>
-						<div className='flex flex-col h-full overflow-y-scroll items-stretch m-2 p-2 '>
+						<div
+							id='scroll-body'
+							className='flex flex-col h-full overflow-y-scroll scroll-smooth items-stretch m-2 p-2 '
+						>
 							<Filter hideFilter={hideFilter} setHideFilter={setHideFilter} />
-							<div className='flex flex-row items-stretch m-2 mt-2 p-2 pb-5 border-b-2'>
-								<p className='m-0 font-sans place-self-center text-2xl'>
+							<div className='flex flex-row items-stretch m-2 mt-2 p-2 pb-5 border-b'>
+								<p className='m-0 font-sans place-self-center text-lg sm:text-xl md:text-2xl lg:text-2xl'>
 									Sort by Price:{' '}
 								</p>
 								<Select
@@ -103,7 +132,7 @@ const MainContainer = ({ Auth }) => {
 									]}
 								/>
 							</div>
-							<div className='flex m-2 mt-2 p-2 flex-wrap content-evenly items-center justify-center'>
+							<div className='inline-flex m-2 mt-2 p-2 flex-wrap content-center items-center justify-center'>
 								{data.map((singleInstance, i) => (
 									<ListItem data={singleInstance} />
 								))}
@@ -113,11 +142,18 @@ const MainContainer = ({ Auth }) => {
 				</div>
 
 				{!Fullscreen ? (
-					<ChatToggler
-						toggle={Toggle}
-						setToggle={setToggle}
-						fullscreen={Fullscreen}
-					/>
+					<>
+						<ScrollToTop
+							toggle={toggle}
+							scrollToTop={scrollToTop}
+							scrolledToTop={scrolledToTop}
+						/>
+						<ChatToggler
+							toggle={toggle}
+							setToggle={setToggle}
+							fullscreen={Fullscreen}
+						/>
+					</>
 				) : (
 					<></>
 				)}
