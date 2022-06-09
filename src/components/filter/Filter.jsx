@@ -144,15 +144,48 @@ const Filter = ({ hideFilter, setHideFilter }) => {
 					</div>
 				</div>
 
-				<div className='p-1 flex flex-row items-stretch'>
-					<div className='flex p-1 items-stretch flex-col w-100'>
-						<h3 className='m-0 font-sans text-base'>Carats:</h3>
-						<div className='flex mt-1 flex-row'></div>
+				<div className='p-1 flex flex-row justify-between'>
+					<div className='flex p-1 items-stretch flex-col'>
+						<p className='m-0 font-sans text-base'>Carats:</p>
+						<div className='flex mt-1 flex-row'>
+							<input
+								type='number'
+								name='weight_from'
+								onChange={handleOnChange}
+								value={filter.weight_from}
+								className='rounded py-0 h-9 px-1 border-gray-300 mr-2 w-3/4'
+							/>
+							<input
+								type='number'
+								name='weight_to'
+								placeholder='Width'
+								value={filter.weight_to}
+								onChange={handleOnChange}
+								className='rounded py-0 h-9 px-1 border-gray-300 w-3/4'
+								style={{ marginRight: '10px' }}
+							/>
+						</div>
 					</div>
-
-					<div className='flex p-1 items-stretch flex-col w-100'>
-						<h3 className='m-0 font-sans text-base'>Price:</h3>
-						<div className='flex mt-1 flex-row'></div>
+					<div className='flex p-1 items-stretch flex-col'>
+						<p className='m-0 font-sans text-base'>Price:</p>
+						<div className='flex mt-1 flex-row'>
+							<input
+								type='number'
+								name='price_from'
+								placeholder='Length'
+								value={filter.price_from}
+								onChange={handleOnChange}
+								className='rounded py-0 h-9 px-1 border-gray-300 mr-2 w-3/4'
+							/>
+							<input
+								type='number'
+								name='price_to'
+								placeholder='Width'
+								value={filter.price_to}
+								onChange={handleOnChange}
+								className='rounded py-0 h-9 px-1 border-gray-300 w-3/4'
+							/>
+						</div>
 					</div>
 				</div>
 
