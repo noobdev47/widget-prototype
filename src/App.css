@@ -49,16 +49,16 @@
 	color: var(--primary-icon-color);
 	background: var(--main-bg-color);
 	-webkit-transition: all 0.1s ease-out;
-	box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+	/* box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28); */
 }
 
-.akits-pkteam-fab > i {
+/* .akits-pkteam-fab > i {
 	font-size: 2em;
 	line-height: 55px;
 	transition: all 0.2s ease-in-out;
 	-webkit-transition: all 0.2s ease-out;
 	-webkit-transition: all 0.2s ease-in-out;
-}
+} */
 
 .akits-pkteam-fab:not(:last-child) {
 	width: 0;
@@ -110,7 +110,7 @@
 .akits-pkteam-fab:last-child:focus,
 .akits-pkteam-fab:last-child:active,
 .akits-pkteam-fab:last-child:hover {
-	box-shadow: 0 0 6px rgba(0, 0, 0, 0.16), 0 6px 12px rgba(0, 0, 0, 0.32);
+	/* box-shadow: 0 0 6px rgba(0, 0, 0, 0.16), 0 6px 12px rgba(0, 0, 0, 0.32); */
 }
 
 /*Chatbox*/
@@ -883,7 +883,7 @@ strong.akits-pkteam-chat_time {
 
 @media only screen and (min-width: 768px) {
 	.akits-pkteam-chat {
-		width: 600px;
+		width: 80%;
 	}
 
 	.akits-pkteam-chat_field {
