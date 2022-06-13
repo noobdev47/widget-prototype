@@ -6,8 +6,10 @@ import ChatToggler from '../ChatToggler'
 import ScrollToTop from '../ScrollToTop'
 import ListItem from '../list_item/ListItem'
 import React, { useEffect, useRef, useState } from 'react'
+import StoneReservation from '../stone_reservation/StoneReservation'
+import StoneDetail from '../stone_detail/StoneDetail'
 
-const MainContainer = ({ Auth }) => {
+const MainContainer = ({ Auth, Route, Stone }) => {
 	const [toggle, setToggle] = useState(false)
 	const [loading, setLoading] = useState(false)
 	const [Fullscreen, setFullscreen] = useState(false)
@@ -115,28 +117,42 @@ const MainContainer = ({ Auth }) => {
 							id='scroll-body'
 							className='flex flex-col h-full overflow-y-scroll scroll-smooth items-stretch m-2 p-2 '
 						>
-							<Filter hideFilter={hideFilter} setHideFilter={setHideFilter} />
-							<div className='flex flex-row items-stretch m-2 mt-2 p-2 pb-5 border-b'>
-								<p className='m-0 font-sans place-self-center text-lg sm:text-xl md:text-2xl lg:text-2xl'>
-									Sort by Price:{' '}
-								</p>
-								<Select
-									isClearable
-									name='sort_price'
-									closeMenuOnSelect={false}
-									className='font-sans text-sm w-60 ml-3'
-									options={[
-										{ value: 'lowest', label: 'Lowest' },
-										{ value: 'highest', label: 'Highest' },
-										{ value: 'noSort', label: 'No Sorting' },
-									]}
-								/>
-							</div>
-							<div className='inline-flex m-2 mt-2 p-2 flex-wrap content-center items-center justify-center'>
-								{data.map((singleInstance, i) => (
-									<ListItem key={i} data={singleInstance} />
-								))}
-							</div>
+							{Route.currentRoute === 'main' ? (
+								<>
+									<Filter
+										hideFilter={hideFilter}
+										setHideFilter={setHideFilter}
+									/>
+									<div className='flex flex-row items-stretch m-2 mt-2 p-2 pb-5 border-b'>
+										<p className='m-0 font-sans place-self-center text-lg sm:text-xl md:text-2xl lg:text-2xl'>
+											Sort by Price:{' '}
+										</p>
+										<Select
+											isClearable
+											name='sort_price'
+											closeMenuOnSelect={false}
+											className='font-sans text-sm w-60 ml-3'
+											options={[
+												{ value: 'lowest', label: 'Lowest' },
+												{ value: 'highest', label: 'Highest' },
+												{ value: 'noSort', label: 'No Sorting' },
+											]}
+										/>
+									</div>
+									<div className='inline-flex m-2 mt-2 p-2 flex-wrap content-center items-center justify-center'>
+										{data.map((singleInstance, i) => (
+											<ListItem key={i} data={singleInstance} />
+										))}
+									</div>
+								</>
+							) : Stone !== undefined ? (
+								<>
+									<StoneReservation />
+									<StoneDetail />
+								</>
+							) : (
+								<div>Loading</div>
+							)}
 						</div>
 					</div>
 				</div>
@@ -165,6 +181,8 @@ const MainContainer = ({ Auth }) => {
 const mapStateToProps = state => {
 	return {
 		Auth: state.Auth,
+		Route: state.Route,
+		Stone: state.Stone,
 	}
 }
 
