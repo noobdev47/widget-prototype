@@ -1,6 +1,11 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { changeRoute } from '../../store/actions/route.actions'
+import { getStoneDetail } from '../../store/actions/stone.actions'
 
 const ListItem = ({ data }) => {
+	const dispatch = useDispatch()
+
 	return (
 		<div className='p-2 m-2 flex flex-col basis-2/3 sm:basis-5/12 md:basis-5/12 lg:basis-5/12  border border-slate-300 rounded'>
 			<img
@@ -47,7 +52,15 @@ const ListItem = ({ data }) => {
 			<p className='font-sans py-2 text-2xl text-sky-500 text-center'>
 				{data.price}
 			</p>
-			<button className='py-3 hover:shadow-lg hover:shadow-sky-500/50 transition ease-in-out duration-300 font-medium text-lg rounded font-sans border border-sky-500 bg-white text-sky-500 hover:bg-sky-500 hover:text-white'>
+			<button
+				onClick={() => {
+					dispatch(
+						changeRoute({ previousRoute: 'main', currentRoute: 'stone-detail' })
+					)
+					dispatch(getStoneDetail(data))
+				}}
+				className='py-3 hover:shadow-lg hover:shadow-sky-500/50 transition ease-in-out duration-300 font-medium text-lg rounded font-sans border border-sky-500 bg-white text-sky-500 hover:bg-sky-500 hover:text-white'
+			>
 				MORE INFO
 			</button>
 		</div>
