@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux'
 import authReducer from './reducers/auth.reducer'
+import routeReducer from './reducers/route.reducer'
+import stoneReducer from './reducers/stone.reducer'
 
 const appReducer = combineReducers({
   Auth: authReducer,
+  Route: routeReducer,
+  Stone: stoneReducer
 })
 
 const rootReducer = (state, action) => {
