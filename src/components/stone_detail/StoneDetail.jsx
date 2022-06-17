@@ -59,7 +59,7 @@ const StoneDetail = ({ Stone }) => {
 					</div>
 					<div className='flex flex-row justify-between bg-stone-100 p-2'>
 						<p>Certificate</p>
-						<p className='mr-1'>
+						<p>
 							ICL <p className='underline'>View Report {'>>'}</p>
 						</p>
 					</div>
