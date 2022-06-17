@@ -229,7 +229,7 @@ const Filter = ({ hideFilter, setHideFilter }) => {
 					/>
 				</div>
 				<div className='flex flex-row w-full justify-end'>
-					<div className='flex flex-row w-1/2 p-2'>
+					<div className='flex flex-row lg:w-1/2 md:w-1/2 sm:w-full w-full p-2'>
 						<button className='py-3 mr-2 w-1/2 hover:shadow-lg hover:shadow-blue-700/50 transition ease-in-out duration-300 font-medium text-lg rounded font-sans border border-blue-700 bg-white text-blue-700 hover:bg-blue-700 hover:text-white'>
 							Clear Filter
 						</button>
